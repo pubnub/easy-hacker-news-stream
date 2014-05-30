@@ -65,9 +65,7 @@ if __name__ == "__main__":
 		print("Something went wrong because of => " + str(ex))
 
 
-	sub_key = "sub-c-dc6bc448-89af-11e3-baad-02ee2ddab7fe"
-	pub_key = "pub-c-cc479bc5-bfa2-412c-826f-f8e05f702a03"
-	pubnub = Pubnub(pub_key, sub_key)
+	pubnub = Pubnub("demo", "demo")
 
 	fp = current_hn(rss_link)
 
