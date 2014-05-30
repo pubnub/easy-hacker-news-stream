@@ -1,0 +1,61 @@
+<!DOCTYPE html>  
+
+<style>
+
+#banner {
+        background: #ff6600;
+        border-radius: 6px;
+        padding: 20px;
+        margin: 10px;
+        color: #fff;
+        font-size: 29px;
+        font-family: "Helvetica Neue";
+        font-weight: 100;
+    }
+
+</style>
+<html lang="en">   
+<head>   
+<div id="banner">
+    <span id="banner-message">Hacker News Feed</span>
+</div> 
+
+<meta charset="utf-8">
+<link href="./bootstrap.css" rel="stylesheet">  
+</head>  
+
+<body>  
+<table id="feed" class="table table-striped">  </table>
+<script src="http://cdn.pubnub.com/pubnub.min.js"></script>
+<script>
+    function createTable(json) {
+
+        var table = document.getElementById("feed");
+        table.innerHTML = "";
+        for (var i = 0; i < 30; i++) {
+            var row = table.insertRow(i);
+            var obj = json[i];
+            cell1 = row.insertCell(0);
+            cell2 = row.insertCell(1);
+            cell3 = row.insertCell(2);
+            cell1.innerHTML = obj["rank"];
+            cell2.innerHTML = '<a href="'+obj["link"]+'">'+obj["title"]+'</a>';
+            cell3.innerHTML = '<a href="'+obj["comments"]+'">'+"Comments"+'</a>';
+        }
+    }
+
+    function pub_sub(){
+        var pubnub = PUBNUB.init({
+            publish_key: "pub-c-cc479bc5-bfa2-412c-826f-f8e05f702a03",
+            subscribe_key: "sub-c-dc6bc448-89af-11e3-baad-02ee2ddab7fe"
+        });
+
+        pubnub.subscribe({
+            channel: "hacker-news",
+            message: createTable
+        });
+    }
+    pub_sub();
+</script>
+</body>  
+</html> 
