@@ -1,7 +1,7 @@
 #1 Easy Way to Create a Hacker News Feed using Python and JavaScript
 
 
-We’ve all been sitting in the back of a CS lecture or class and looked up from our laptop to actually listen and taken a quick peek around at everyone’s laptops. More likely than not, quite a few of those screens were displaying the all too familiar Hacker News orange. While maybe we should all pay attention more to the speaker, it seems new, cool news always takes precedence. So what if you were determined to never miss a single article? Or what if you wanted to get every update from the site and automate based off that new information? By leveraging the power of PubNub’s real time global network, and scraping a little RSS, everyone will never miss a new Hacker News article again. If you want to see it working live, there is a quick and dirty [demo you can see here.][2] It uses the JavaScript Pubnub SDK and will display the updates to the Hacker News feed. Just clone the [source from Github][3] and run the Python scraper locally.
+We’ve all been sitting in the back of a CS lecture or class and looked up from our laptop to actually listen and taken a quick peek around at everyone’s laptops. More likely than not, quite a few of those screens were displaying the all too familiar Hacker News orange. While maybe we should all pay more attention to the speaker, it seems new, cool news always takes precedence. So what if you were determined to never miss a single article? Or what if you wanted to get every update from the site and automate based off that new information? By leveraging the power of PubNub’s real time global network, and scraping a little RSS, everyone will never miss a new Hacker News article again. If you want to see it working live, there is a quick and dirty [demo you can see here.][2] It uses the JavaScript Pubnub SDK and will display the updates to the Hacker News feed. Just clone the [source from Github][3] and run the Python scraper locally.
 
 ## RSS Scraping
 
@@ -31,7 +31,7 @@ There is lots of information you will get in this feed and if you want, take it 
 
 ## Go Global
 
-Now that we have the information that is important to us, its time to make it global. PubNub provides our incredibly simple API to publish the message. Quickly “pip install Pubnub” and publish our information from Hacker News.  
+Now that we have the information that is important to us, it's time to make it global. PubNub provides our incredibly simple API to publish the message. Quickly “pip install Pubnub” and publish our information from Hacker News.  
 
     // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
     // Publish to PubNub
@@ -55,7 +55,7 @@ If you want to dive further into PubNub, we have lots of [tutorials and walkthro
 
 
   [1]: http://www.pubnub.com/developers/
-  [2]: http://madisonsmith.github.io/hn-feed/
-  [3]: https://github.com/madisonsmith/hn-feed
-  [4]: http://i.imgur.com/HKDis4G.png
+  [2]: http://pubnub.github.io/easy-hacker-news-stream/
+  [3]: https://github.com/pubnub/easy-hacker-news-stream/
+  [4]: http://i.imgur.com/8rvUgcb.png
   [5]: http://www.pubnub.com/demos/
