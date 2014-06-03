@@ -1,4 +1,4 @@
-#1 Easy Way to Create a Hacker News Feed using Python and JavaScript
+# The Easiest Way to Create a Hacker News Feed using Python and JavaScript
 
 
 We’ve all been sitting in the back of a CS lecture or class and looked up from our laptop to actually listen and taken a quick peek around at everyone’s laptops. More likely than not, quite a few of those screens were displaying the all too familiar Hacker News orange. While maybe we should all pay more attention to the speaker, it seems new, cool news always takes precedence. So what if you were determined to never miss a single article? Or what if you wanted to get every update from the site and automate based off that new information? By leveraging the power of PubNub’s real time global network, and scraping a little RSS, everyone will never miss a new Hacker News article again. If you want to see it working live, there is a quick and dirty [demo you can see here.][2] It uses the JavaScript Pubnub SDK and will display the updates to the Hacker News feed. Just clone the [source from Github][3] and run the Python scraper locally.
