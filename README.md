@@ -17,30 +17,33 @@ The first task is to grab the RSS feed from Hacker News. There is a plethora of 
 
 There is lots of information you will get in this feed and if you want, take it all. However, I decided the most interesting information was the rank of the post, title of the post, the link to the article, and the comments link. 
 
-    // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
-    // Store interesting information
-    // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
-    message = []
-    for index, entry in enumerate(rss.entries):
-    	post = {}
-    	post["rank"] = index + 1
-    	post["title"] = entry.title
-    	post["link"] = entry.link
-    	post["comments"] = entry.comments
-    	message.append(post)
+```python
+// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+// Store interesting information
+// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+message = []
+for index, entry in enumerate(rss.entries):
+    post = {}
+    post["rank"] = index + 1
+    post["title"] = entry.title
+    post["link"] = entry.link
+    post["comments"] = entry.comments
+    message.append(post)
+```
 
 ## Go Global
 
 Now that we have the information that is important to us, it's time to make it global. PubNub provides our incredibly simple API to publish the message. Quickly “pip install Pubnub” and publish our information from Hacker News.  
 
-    // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
-    // Publish to PubNub
-    // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
-    pubnub.publish({
-		"channel": "hacker-news",
-		"message": message
-		})
-
+```javascript
+// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+// Publish to PubNub
+// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+pubnub.publish({
+    channel : "hacker-news",
+    message : message
+})
+```
 
 Now it’s up to you. [PubNub offers over 50 different SKD’s for your use. Take your pick.][1] When trying to consume the information simply subscribe to the channel (in our case “hacker-news”) and you’re off. There are publically available demo publish and subscribe keys to use. The Python module even gives you options for specifying how often you want to poll Hacker News for changes, and if you want to get a new page after every change to the site or just the new posts that appear on the site. 
 
