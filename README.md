@@ -7,13 +7,13 @@ We’ve all been sitting in the back of a CS lecture or class and looked up from
 
 The first task is to grab the RSS feed from Hacker News. There is a plethora of ways to do this and you can quickly write your own rss scraper if you want, but I decided to use Python and feedparser. With a quick “pip install feedparser” we have our RSS. 
 
-
-    // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
-    // Get Hacker News Rss
-    // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
-    def current_hn(rss):
-	    return feedparser.parse(rss)
-
+```python
+// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+// Get Hacker News Rss
+// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+def current_hn(rss):
+    return feedparser.parse(rss)
+```
 
 There is lots of information you will get in this feed and if you want, take it all. However, I decided the most interesting information was the rank of the post, title of the post, the link to the article, and the comments link. 
 
