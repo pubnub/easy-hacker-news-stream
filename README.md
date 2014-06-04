@@ -43,8 +43,17 @@ parser = ArgumentParser(description="Options to parse RSS Feed")
 parser.add_argument("-t", "--time", dest="time_to_wait", type=int, default=10)
 ```
 
-You can `python hn.py --help` to see descriptions of all the options from the command line. The Python module gives you options for specifying how often you want to poll Hacker News for changes and if you want to get a new page after every change to the site or just the new posts that appear on the site. For instance, if you wanted to poll every five seconds and get the entire page you could run `python hn.py --mode entire --time 5` to be up and going. Argparse also gives defaults, so a `python hn.py` will work just fine.
+You can `python hn.py --help` to see descriptions of all the options from the command line. The Python module gives you options for specifying how often you want to poll Hacker News for changes and if you want to get a new page after every change to the site or just the new posts that appear on the site. For instance, if you wanted to poll every five seconds and get the entire page you could run to be up and going:
 
+```bash
+python hn.py --mode entire --time 5
+```
+
+Argparse also gives defaults, so run the following to use the defaults:
+
+```bash
+python hn.py
+```
 
 ## Go Global
 
