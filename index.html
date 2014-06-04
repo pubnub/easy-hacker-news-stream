@@ -2,7 +2,7 @@
 
 <style>
 
-#banner {
+    #banner {
         background: #ff6600;
         border-radius: 6px;
         padding: 20px;
@@ -12,7 +12,6 @@
         font-family: "Helvetica Neue";
         font-weight: 100;
     }
-
 </style>
 <html lang="en">   
 <head>   
@@ -29,7 +28,6 @@
 <script src="http://cdn.pubnub.com/pubnub.min.js"></script>
 <script>
     function createTable(json) {
-
         var table = document.getElementById("feed");
         table.innerHTML = "";
         for (var i = 0; i < 30; i++) {
@@ -43,8 +41,7 @@
             cell3.innerHTML = '<a href="'+obj["comments"]+'">'+"Comments"+'</a>';
         }
     }
-
-    function pub_sub(){
+    function pubSub(){
         var pubnub = PUBNUB.init({
             publish_key: "demo",
             subscribe_key: "demo"
@@ -55,7 +52,7 @@
             message: createTable
         });
     }
-    pub_sub();
+    pubSub();
 </script>
 </body>  
 </html> 
