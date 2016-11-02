@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hacker News Demo</title>
+    <script src="https://cdn.pubnub.com/sdk/javascript/pubnub.4.2.2.min.js"></script>
+    <style type="text/css">
+        body {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            padding:0;
+            margin: 0;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        td {
+            border: 1px solid lightgray;
+            padding: 0.25em 0.5em;
+        }
+    </style>
+</head>
+<body>
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-PZWSZ2"
+                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PZWSZ2');</script>
+<!-- End Google Tag Manager -->
+
+<table id="feed"><tr><td>loading...</td></tr></table>
+<script type="text/javascript">
+    function updateTable(json) {
+        var table = document.getElementById("feed");
+        table.innerHTML = "";
+        json.message.forEach(function(obj,i) {
+            var row = table.insertRow(i);
+            row.insertCell(0).innerHTML = obj.rank+"";
+            row.insertCell(1).innerHTML = "<a href='"+obj.link+"'>" + obj['title'] + "</a> ";
+            row.insertCell(2).innerHTML = "<a href='"+obj.comments+"'>Comments</a>";
+        });
+    }
+
+    var pubnub = new PubNub({
+        publishKey:'demo',
+        subscribeKey:'demo',
+    });
+    pubnub.addListener({  message: updateTable });
+    pubnub.subscribe({ channels:['hacker-news']});
+</script>
+</body>
+</html>

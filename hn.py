@@ -20,6 +20,7 @@ def create_message(rss):
     return message
 
 def publish(pubnub, message):
+    print("publishing",message);
     pubnub.publish({
         "channel": "hacker-news",
         "message": message
