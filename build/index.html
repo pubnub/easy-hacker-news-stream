@@ -12,6 +12,17 @@
             height: 400px;
             border: 0px solid lightgray;
         }
+        .hbox {
+            display: flex;
+            flex-direction: row;
+        }
+        .vbox {
+            display: flex;
+            flex-direction: column;
+        }
+        .debug {
+            border: 3px solid red;
+        }
     </style>
 </head>
 <body>
@@ -26,13 +37,45 @@
 </iframe>
 
 <h3>CONSUME THIS STREAM</h3>
-
 <div class="hbox">
     <div class="vbox">
         some code goes here
+        Javascript
+        <pre><code>1. Load the PubNub javascript SDK:
+
+  &lt;script src="http://cdn.pubnub.com/pubnub.min.js"&gt;
+
+2. Run this code in the console!
+
+  PUBNUB.init({
+      subscribe_key: 'sub-c-7dc068d2-f1af-11e3-b429-02ee2ddab7fe'
+  }).subscribe({
+      channel : 'pubnub-hacker-news',
+      message : function(msg){ console.log(msg) }
+  });
+</code></pre>
     </div>
     <div class="vbox">
-        the console goes here
+        <p>the console goes here</p>
+    </div>
+</div>
+
+<div class="hbox">
+    <div class="vbox">
+        <h4>STREAM DETAILS</h4>
+        <p>Channel: <i>pubnub-hacker-news</i></p>
+        <p>Subscribe key: <i>sub-c-7dc068d2-f1af-11e3-b429-02ee2ddab7fe</i></p>
+        <p>To use this stream in your project, copy/paste the snippets above or subscribe to this
+        channel and subkey</p>
+    </div>
+    <div class="vbox">
+        <h4>SCHEMA</h4>
+<pre>{
+    comments: https://news.ycombinator.com/item?id=10733201,
+    link: http://osa1.net/posts/2015-08-09-sufficiently-smart-compiler.html,
+    title: On sufficiently smart compilers
+}
+</pre>
     </div>
 </div>
 
