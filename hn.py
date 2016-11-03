@@ -1,5 +1,5 @@
 import feedparser
-from Pubnub import Pubnub
+from pubnub import Pubnub
 import time
 from argparse import ArgumentParser
 import sys
@@ -20,11 +20,7 @@ def create_message(rss):
     return message
 
 def publish(pubnub, message):
-    print("publishing",message);
-    pubnub.publish({
-        "channel": "hacker-news",
-        "message": message
-    })
+    pubnub.publish("hacker-news",message);
 
 def check_for_change(mode, hn, rss):
     new_hn = current_hn(rss)
@@ -65,7 +61,7 @@ if __name__ == "__main__":
     except Exception as ex:
         print("Something went wrong because of => " + str(ex))
 
-    pubnub = Pubnub("demo", "demo")
+    pubnub = Pubnub(publish_key="demo", subscribe_key="demo")
     fp = current_hn(rss_link)
 
     while True:
