@@ -61,7 +61,9 @@ if __name__ == "__main__":
     except Exception as ex:
         print("Something went wrong because of => " + str(ex))
 
-    pubnub = Pubnub(publish_key="demo", subscribe_key="demo")
+    pubnub = Pubnub(
+       publish_key="pub-c-8bcdd737-77b8-48b0-b394-2fe6fc8543f8", 
+       subscribe_key="sub-c-c00db4fc-a1e7-11e6-8bfd-0619f8945a4f")
     fp = current_hn(rss_link)
 
     while True:

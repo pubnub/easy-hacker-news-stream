@@ -45,8 +45,7 @@
     }
 
     var pubnub = new PubNub({
-        publishKey:'demo',
-        subscribeKey:'demo',
+        subscribeKey:'sub-c-c00db4fc-a1e7-11e6-8bfd-0619f8945a4f'
     });
     pubnub.addListener({  message: updateTable });
     pubnub.subscribe({ channels:['hacker-news']});
