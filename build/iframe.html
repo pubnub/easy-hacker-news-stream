@@ -32,6 +32,8 @@
 <!-- End Google Tag Manager -->
 
 <table id="feed"><tr><td>loading...</td></tr></table>
+
+
 <script type="text/javascript">
     function updateTable(json) {
         var table = document.getElementById("feed");
@@ -39,8 +41,8 @@
         json.message.forEach(function(obj,i) {
             var row = table.insertRow(i);
             row.insertCell(0).innerHTML = obj.rank+"";
-            row.insertCell(1).innerHTML = "<a href='"+obj.link+"'>" + obj['title'] + "</a> ";
-            row.insertCell(2).innerHTML = "<a href='"+obj.comments+"'>Comments</a>";
+            row.insertCell(1).innerHTML = "<a href='"+obj.link+"' target='_blank' >" + obj['title'] + "</a> ";
+            row.insertCell(2).innerHTML = "<a href='"+obj.comments+"' target='_blank'>Comments</a>";
         });
     }
 

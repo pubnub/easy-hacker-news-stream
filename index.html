@@ -48,8 +48,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             cell2 = row.insertCell(1);
             cell3 = row.insertCell(2);
             cell1.innerHTML = obj["rank"];
-            cell2.innerHTML = '<a href="'+obj["link"]+'">'+obj["title"]+'</a>';
-            cell3.innerHTML = '<a href="'+obj["comments"]+'">'+"Comments"+'</a>';
+            cell2.innerHTML = '<a href="'+obj["link"]+'" target="_blank">'+obj["title"]+'</a>';
+            cell3.innerHTML = '<a href="'+obj["comments"]+'" target="_blank">'+"Comments"+'</a>';
         }
     }
     function pubSub(){
